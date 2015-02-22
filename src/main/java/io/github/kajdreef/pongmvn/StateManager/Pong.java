@@ -27,7 +27,8 @@ public class Pong extends State {
     private final int padOffset = 20, padHeight = 40;
     
     public Pong(){
-        restartGame();
+        score = new Score();
+        init();
     }
     
     /**
@@ -35,8 +36,9 @@ public class Pong extends State {
      */
     private void init(){
         entityList.clear();
+        double y = ((double)Launcher.HEIGHT)* Math.random();
         
-        ball = new Ball(50,120,10,10);
+        ball = new Ball(50,y,10,10);
         pad1 = new Pad(padOffset,Launcher.HEIGHT/2 - padHeight/2,10,padHeight);
         pad2 = new Pad(Launcher.WIDTH-padOffset,Launcher.HEIGHT/2 - padHeight/2 ,10,padHeight);
 
@@ -112,7 +114,7 @@ public class Pong extends State {
      * Restart the pong game with new score.
      */
     public void restartGame(){
-        score = new Score();
+        score.reset();
         init();
     }
 }

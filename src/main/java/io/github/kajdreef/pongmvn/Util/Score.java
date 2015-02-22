@@ -11,10 +11,10 @@ import org.newdawn.slick.TrueTypeFont;
  * @author kajdreef
  */
 public class Score {
-    int player1;
-    int player2;
+    private int player1;
+    private int player2;
     
-    TrueTypeFont font;
+    private TrueTypeFont font;
     
     public Score(){
         Font awtFont = new Font("Times New Roman", Font.BOLD, 25);
@@ -35,6 +35,14 @@ public class Score {
         else{
             player2++;
         }
+    }
+    
+    /**
+     * Reset score of the player.
+     */
+    public void reset(){
+        this.player1 = 0;
+        this.player2 = 0;
     }
    
     /**

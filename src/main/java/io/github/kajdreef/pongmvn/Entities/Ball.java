@@ -19,7 +19,10 @@ public class Ball extends AbstractMovingEntity {
     public Ball(double x, double y, double width, double height) {
         super(x, y, width, height);
         this.dx = SPEED * Launcher.WIDTH/640;
-        this.dy = SPEED * Launcher.HEIGHT/480;
+        if(Math.random() < 0.5)
+            this.dy = SPEED * Launcher.HEIGHT/480;
+        else
+            this.dy = -SPEED * Launcher.HEIGHT/480;
     }
 
     @Override
